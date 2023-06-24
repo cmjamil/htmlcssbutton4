@@ -1,0 +1,85 @@
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-size: 16px;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: #666;
+}
+
+.outer{
+   
+    position: relative;
+    animation: rotate 2s ease-in infinite;
+}
+
+.outer:hover{
+    background: linear-gradient(#FC4F00,#00FFCA,#11009E);                
+}
+
+.outer:not(:last-child){
+    margin-right: 50px;
+}
+
+.button{
+    width: 200px;
+    height: 50px;
+    border-radius: 50px;
+}
+
+button, .outer span {
+    position: absolute;
+    inset: 0;
+   
+}
+
+.outer span{
+    background: inherit;
+    z-index: -1;
+}
+
+button{
+    inset: 4px;
+    outline: 0;
+    border: 0;
+    background: #222;
+    color: #ddd;
+}
+
+.button button, .button span{
+    border-radius: 50px;
+}
+
+.circle{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.circle button,.circle span{
+    border-radius: 50% !important;
+}
+
+.outer span:nth-child(1){
+    filter: blur(7px);
+}
+
+.outer span:nth-child(2){
+    filter: blur(14px);
+}
+
+@keyframes rotate {
+    0%{
+        filter: hue-rotate(0deg)
+    }
+
+    100%{
+        filter: hue-rotate(360deg)
+    }
+}
